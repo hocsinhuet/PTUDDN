@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<h1>Welcome</h1>
+<div th:if="${name}">
+    <p>Logged in as: <span th:text="${name}"></span></p>
+    <p>Email: <span th:text="${email}"></span></p>
+    <a href="/logout">Logout</a>
+</div>
+<div th:unless="${name}">
+    <a href="/oauth2/authorization/wso2">Login with WSO2</a>
+</div>
+</body>
+</html>
